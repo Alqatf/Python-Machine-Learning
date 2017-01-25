@@ -8,7 +8,7 @@ X = iris.data[:, [2,3]]
 y = iris.target
 
 # split data to evaluate model performance
-from sklearn.cross_validation import train_test_split
+from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.3, random_state = 0)
 
 # normalize features
@@ -26,7 +26,7 @@ svm.fit(X_train_std, y_train)
 # plot decision regions of SVM
 import sys
 import numpy as np
-sys.path.append("C:/Users/Craig/Documents/GitHub/Python-Machine-Learning")
+sys.path.append("~/Documents/Practice/Repos/Python-Machine-Learning")
 from functions_module import plot_decision_regions
 
 X_combined_std = np.vstack((X_train_std, X_test_std))
@@ -96,7 +96,7 @@ plt.legend(loc = 'upper left')
 plt.show()
 
 
-# try with a larger value of gamme
+# try with a larger value of gamma
 svm = SVC(kernel = 'rbf',
           random_state = 0,
           gamma = 100.0,
