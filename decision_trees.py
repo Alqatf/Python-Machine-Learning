@@ -47,7 +47,7 @@ iris = datasets.load_iris()
 X = iris.data[:, [2,3]]
 y = iris.target
 # split data to evaluate model performance
-from sklearn.cross_validation import train_test_split
+from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.3, random_state = 0)
 
 # normalize features
@@ -84,5 +84,5 @@ plt.show()
 # create tree diagram for graphviz
 from sklearn.tree import export_graphviz
 export_graphviz(tree,
-                out_file = 'C:/Users/Craig/Documents/GitHub/Python-Machine-Learning/tree.dot',
+                out_file = '~/Documents/Practice/Python/Python-Machine-Learning/tree.dot',
                 feature_names = ['petal length', 'petal width'])

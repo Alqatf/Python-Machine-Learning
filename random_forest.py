@@ -8,7 +8,7 @@ X = iris.data[:, [2,3]]
 y = iris.target
 
 # split data to evaluate model performance
-from sklearn.cross_validation import train_test_split
+from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.3, random_state = 0)
 
 from sklearn.ensemble import RandomForestClassifier
@@ -26,7 +26,7 @@ X_combined = np.vstack((X_train, X_test))
 y_combined = np.hstack((y_train, y_test))
 
 import sys
-sys.path.append("C:/Users/Craig/Documents/GitHub/Python-Machine-Learning")
+sys.path.append("~/Documents/Practice/Python/Repos/Python-Machine-Learning")
 from functions_module import plot_decision_regions
 plot_decision_regions(X_combined,
                       y_combined,
